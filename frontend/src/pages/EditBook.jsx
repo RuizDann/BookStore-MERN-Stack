@@ -16,7 +16,7 @@ const EditBook = () => {
 
     useEffect(() => {
         setLoading(true);
-        axios.get(`https://ruizdann-bookstore-mern.netlify.app/books/${id}`)
+        axios.get(`https://mern-bookstore-yezb.onrender.com/books/${id}`)
             .then((response) => {
                 setTitle(response.data.title);
                 setAuthor(response.data.author);

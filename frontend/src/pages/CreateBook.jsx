@@ -21,7 +21,7 @@ const CreateBook = () => {
         };
         setLoading(true);
         axios
-            .post("http://localhost:5500/books", data)
+            .post("https://ruizdann-bookstore-mern.netlify.app/books", data)
             .then(() => {
                 setLoading(false);
                 enqueueSnackbar("Book created successfully.", { variant: "success" });

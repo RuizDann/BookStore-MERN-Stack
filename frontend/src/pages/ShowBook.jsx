@@ -12,7 +12,7 @@ const ShowBook = () => {
     useEffect(() => {
         setLoading(true);
         axios
-            .get(`http://localhost:5500/books/${id}`)
+            .get(`https://ruizdann-bookstore-mern.netlify.app/books/${id}`)
             .then((response) => {
                 setBook(response.data);
                 setLoading(false);

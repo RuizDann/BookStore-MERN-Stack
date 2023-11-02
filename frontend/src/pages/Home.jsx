@@ -14,7 +14,7 @@ const Home = () => {
     useEffect(() => {
         setLoading(true);
         axios
-            .get('http://localhost:5500/books')
+            .get('https://ruizdann-bookstore-mern.netlify.app/books')
             .then((response) => {
                 setBooks(response.data.data);
                 setLoading(false);

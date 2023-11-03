@@ -76,7 +76,7 @@ const ShowBook = () => {
 
     const fetchBookData = async (id) => {
         try {
-            const response = await axios.get(`https://mern-bookstore-yezb.onrender.com/${id}`);
+            const response = await axios.get(`https://mern-bookstore-yezb.onrender.com/books/${id}`);
             return response.data;
         } catch (error) {
             console.error(error);

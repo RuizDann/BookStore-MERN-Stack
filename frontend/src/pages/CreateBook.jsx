@@ -14,6 +14,11 @@ const CreateBook = () => {
     const { enqueueSnackbar } = useSnackbar();
 
     const handleSaveBook = () => {
+        if (!title || !author || !publishYear) {
+            enqueueSnackbar("Please fill in all fields.", { variant: "error" });
+            return;
+        }
+
         const data = {
             title,
             author,
@@ -29,9 +34,8 @@ const CreateBook = () => {
             })
             .catch((error) => {
                 setLoading(false);
-                // alert('An error occured. Please check the console for more details.');
-                enqueueSnackbar("An error occured. Please check the console for more details.", { variant: "error" });
-                console.log(error);
+                enqueueSnackbar("An error occurred. Please check the console for more details.", { variant: "error" });
+                console.error(error);
             });
     }
 
@@ -68,7 +72,7 @@ const CreateBook = () => {
                         onChange={(e) => setPublishYear(e.target.value)}
                     />
                 </div>
-                <button className="p-2 bg-sky-300 m-8" onClick={handleSaveBook}>Save</button>
+                <button className="p-2 bg-sky-300 mx-[40%] w-[25%]" onClick={handleSaveBook}>Save</button>
             </div>
         </div>
     )
